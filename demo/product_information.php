@@ -34,9 +34,10 @@ $product = $result->fetch_assoc();
 
         <div class="col-md-6">
             <h2><?php echo $product['title']; ?></h2>
-            <p><strong>Chất liệu:</strong> <?php echo $product['material']; ?></p>
-            <p><strong>Kích thước:</strong> <?php echo $product['size']; ?></p>
             <p><strong>Nhà cung cấp:</strong> <?php echo $product['supplier']; ?></p>
+            <p><strong>Kích thước:</strong> <?php echo $product['size']; ?></p>
+            <p><strong>Chất liệu:</strong> <?php echo $product['material']; ?></p>
+            <p><strong>Màu sắc:</strong> <?php echo $product['color']; ?></p>
             <p><strong>Giá cả:</strong> <?php echo number_format($product['price'], 2); ?> VND</p>
             <p><strong>Mô tả chi tiết:</strong> <?php echo $product['moredescription']; ?></p>
             <a href="home.php" class="btn btn-secondary">Quay lại</a>
@@ -45,3 +46,4 @@ $product = $result->fetch_assoc();
 </div>
 
 <?php include 'footer.php'; ?>
+

@@ -1,6 +1,7 @@
 /* Định dạng chung */
 body {
-    background-color: rgb(223, 236, 42);
+    background-color: #F2F2F2
+    /* background: url('../images/coffindance.jpg')    no-repeat center center/cover; */
 }
 
 /* Khung form đăng nhập và đăng ký */
@@ -37,7 +38,7 @@ body {
 
 /* Hero Section (Banner chính) */
 .hero-section {
-    background: url('../images/16.png') no-repeat center center/cover;
+    background: url('../images/sleeping.jpg') no-repeat center center/cover;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -51,3 +52,34 @@ body {
     transform: scale(1.05);
     transition: 0.3s;
 }
+/* user */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    width: 350px;
+}
+.popup-content {
+    text-align: center;
+}
+.popup input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* header */
+.navbar {
+    background-color: #CB0101 !important; 
+}
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: white; 
+}
+
+

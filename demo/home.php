@@ -4,7 +4,7 @@ include 'header.php';
 include 'config/database.php'; 
 ?>
 <header class="hero-section text-center">
-    <h1>Chào mừng đến với shop bán giường</h1>
+    <h1>Chào mừng đến với shop giường nằm</h1>
 </header>
 <!-- Danh sách sản phẩm -->
 <div class="container my-5">
