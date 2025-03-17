@@ -38,7 +38,7 @@ body {
 
 /* Hero Section (Banner chính) */
 .hero-section {
-    background: url('../images/sleeping.jpg') no-repeat center center/cover;
+    background: url('../images/sleepingbean.gif') no-repeat center center/cover;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -46,6 +46,7 @@ body {
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
 
 /* Hiệu ứng khi di chuột vào thẻ card */
 .card:hover {
