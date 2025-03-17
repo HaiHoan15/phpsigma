@@ -40,10 +40,16 @@ $product = $result->fetch_assoc();
             <p><strong>Màu sắc:</strong> <?php echo $product['color']; ?></p>
             <p><strong>Giá cả:</strong> <?php echo number_format($product['price'], 2); ?> VND</p>
             <p><strong>Mô tả chi tiết:</strong> <?php echo $product['moredescription']; ?></p>
-            <a href="home.php" class="btn btn-secondary">Quay lại</a>
+
+            <div class="d-flex">
+                <a href="home.php" class="btn btn-secondary me-2">Quay lại</a>
+                <form action="buy_button.php" method="post">
+                    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                    <button type="submit" name="buy_product" class="btn btn-warning">Mua</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
 <?php include 'footer.php'; ?>
-

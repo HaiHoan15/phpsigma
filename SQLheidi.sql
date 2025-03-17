@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table demodatabase.products: ~7 rows (approximately)
+-- Dumping data for table demodatabase.products: ~6 rows (approximately)
 INSERT INTO `products` (`id`, `image`, `title`, `description`, `material`, `size`, `supplier`, `price`, `moredescription`, `color`) VALUES
 	(1, 'assets/images/bed1.jpg', 'Giường Hoàng Gia Siêu Sang', 'Giường phong cách hoàng gia, chạm trổ tinh xảo, mang đến giấc ngủ đẳng cấp quý tộc.', 'Gỗ sồi tự nhiên, nệm cao cấp', '1m8 x 2m', 'Nội Thất Hoàng Gia', 15900000.00, 'Bạn đã từng mơ thấy mình là một hoàng tử hay công chúa chưa? Đừng chỉ mơ, hãy biến giấc mơ thành hiện thực với chiếc giường Hoàng Gia Siêu Sang này! Với thiết kế tinh xảo như trong lâu đài, bạn sẽ ngủ ngon đến mức không cần báo thức cũng tự dậy trong tâm thế quyền quý!\n', 'Trắng ngà, vàng đồng'),
 	(2, 'assets/images/bed2.webp', 'Giường Gỗ Tự Nhiên "Mộc Mạc Mà Sang"', 'Thiết kế đơn giản nhưng đầy tinh tế, phù hợp với mọi không gian.', 'Gỗ xoan đào', '1m6 x 2m', 'Gỗ Việt Decor', 7500000.00, 'Một chiếc giường dành cho những ai yêu thích sự giản dị nhưng không kém phần thanh lịch. Mộc Mạc Mà Sang không chỉ giúp bạn ngủ ngon mà còn làm nổi bật phong cách sống tối giản nhưng vẫn đầy sang trọng. Cẩn thận, có thể bạn sẽ không muốn rời khỏi giường đâu!', 'Nâu gỗ tự nhiên'),
@@ -63,6 +63,23 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`) VALUES
 	(13, 'haihoan15', 'haihoang15122002@gmail.com', '$2y$10$LWolZ5vHd6IHMYq0ihUwk.sJKM4LyB49mk/sJMLpQM8cxZoG4arxG', '1742189072_12.jpg'),
 	(18, 'haihoan12', 'haihoantamquoc@gmail.com', '$2y$10$vYNKrJQhVAkq0FADq83CcujPJxGQS2C7cmODhD3rWxW1w.1IpsrUW', '1742127381_11.jpg');
+
+-- Dumping structure for table demodatabase.wishlist
+DROP TABLE IF EXISTS `wishlist`;
+CREATE TABLE IF NOT EXISTS `wishlist` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `quantity` int NOT NULL DEFAULT '1',
+  `added_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Dumping data for table demodatabase.wishlist: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

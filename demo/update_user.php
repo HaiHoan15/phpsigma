@@ -1,3 +1,4 @@
+<!-- cập nhập user -->
 <?php
 session_start();
 require 'config/database.php';
@@ -11,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
 
-    // Kiểm tra trùng lặp username hoặc email
     $check_sql = "SELECT id FROM users WHERE (username = ? OR email = ?) AND id != ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("ssi", $username, $email, $user_id);
@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit("Tên hoặc email đã tồn tại trong hệ thống.");
     }
 
-    // Lấy ảnh cũ từ database trước khi cập nhật
     $old_avatar_sql = "SELECT avatar FROM users WHERE id = ?";
     $old_avatar_stmt = $conn->prepare($old_avatar_sql);
     $old_avatar_stmt->bind_param("i", $user_id);

@@ -22,6 +22,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="home.php">Trang Chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="user.php">User</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wishlist.php">Giỏ hàng</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Đăng Xuất</a></li>
                 </ul>
             </div>
