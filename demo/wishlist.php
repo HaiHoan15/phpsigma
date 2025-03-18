@@ -33,29 +33,36 @@ $total_price = 0;
 </head>
 <body>
 
-<h2>Danh sách sản phẩm đã chọn</h2>
-<?php if ($result->num_rows > 0): ?>
-    <form method="post" action="update_wishlist.php">
-        <?php while ($item = $result->fetch_assoc()): 
-            $subtotal = $item['price'] * $item['quantity'];
-            $total_price += $subtotal;
-        ?>
-            <div>
-                <img src="<?= $item['image'] ?>" width="100">
-                <strong><?= $item['title'] ?></strong> - <?= number_format($item['price'], 0, ',', '.') ?> VND
-                <input type="number" name="quantity[<?= $item['wishlist_id'] ?>]" value="<?= $item['quantity'] ?>" min="1">
-                <a href="remove_from_wishlist.php?id=<?= $item['wishlist_id'] ?>">Xóa</a>
-            </div>
-        <?php endwhile; ?>
-        <button type="submit">Cập nhật số lượng</button>
-    </form>
+<div class="wishlist-container">
+    <h2>Danh sách sản phẩm đã chọn</h2>
+    <?php if ($result->num_rows > 0): ?>
+        <form method="post" action="update_wishlist.php">
+            <?php while ($item = $result->fetch_assoc()): 
+                $subtotal = $item['price'] * $item['quantity'];
+                $total_price += $subtotal;
+            ?>
+                <div class="wishlist-item">
+                    <img src="<?= $item['image'] ?>" alt="<?= $item['title'] ?>">
+                    <div class="wishlist-info">
+                        <strong><?= $item['title'] ?></strong>
+                        <span class="wishlist-price"><?= number_format($item['price'], 0, ',', '.') ?> VND</span>
+                    </div>
+                    <div class="wishlist-actions">
+                        <input type="number" name="quantity[<?= $item['wishlist_id'] ?>]" value="<?= $item['quantity'] ?>" min="1">
+                        <a href="remove_from_wishlist.php?id=<?= $item['wishlist_id'] ?>">Xóa</a>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+            <button type="submit">Cập nhật số lượng</button>
+        </form>
 
-    <h3>Tổng giá: <?= number_format($total_price, 0, ',', '.') ?> VND</h3>
-    <button onclick="showCheckoutModal()">Mua</button>
+        <h3 class="total-price">Tổng giá: <?= number_format($total_price, 0, ',', '.') ?> VND</h3>
+        <button class="checkout-btn" onclick="showCheckoutModal()">Mua</button>
+    <?php else: ?>
+        <p>Giỏ hàng trống.</p>
+    <?php endif; ?>
+</div>
 
-<?php else: ?>
-    <p>Giỏ hàng trống.</p>
-<?php endif; ?>
 
 <div id="checkout-modal" style="display:none;">
     <h3>Xác nhận thanh toán</h3>

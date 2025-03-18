@@ -34,9 +34,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   `moredescription` varchar(10000) NOT NULL,
   `color` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table demodatabase.products: ~6 rows (approximately)
+-- Dumping data for table demodatabase.products: ~7 rows (approximately)
 INSERT INTO `products` (`id`, `image`, `title`, `description`, `material`, `size`, `supplier`, `price`, `moredescription`, `color`) VALUES
 	(1, 'assets/images/bed1.jpg', 'Giường Hoàng Gia Siêu Sang', 'Giường phong cách hoàng gia, chạm trổ tinh xảo, mang đến giấc ngủ đẳng cấp quý tộc.', 'Gỗ sồi tự nhiên, nệm cao cấp', '1m8 x 2m', 'Nội Thất Hoàng Gia', 15900000.00, 'Bạn đã từng mơ thấy mình là một hoàng tử hay công chúa chưa? Đừng chỉ mơ, hãy biến giấc mơ thành hiện thực với chiếc giường Hoàng Gia Siêu Sang này! Với thiết kế tinh xảo như trong lâu đài, bạn sẽ ngủ ngon đến mức không cần báo thức cũng tự dậy trong tâm thế quyền quý!\n', 'Trắng ngà, vàng đồng'),
 	(2, 'assets/images/bed2.webp', 'Giường Gỗ Tự Nhiên "Mộc Mạc Mà Sang"', 'Thiết kế đơn giản nhưng đầy tinh tế, phù hợp với mọi không gian.', 'Gỗ xoan đào', '1m6 x 2m', 'Gỗ Việt Decor', 7500000.00, 'Một chiếc giường dành cho những ai yêu thích sự giản dị nhưng không kém phần thanh lịch. Mộc Mạc Mà Sang không chỉ giúp bạn ngủ ngon mà còn làm nổi bật phong cách sống tối giản nhưng vẫn đầy sang trọng. Cẩn thận, có thể bạn sẽ không muốn rời khỏi giường đâu!', 'Nâu gỗ tự nhiên'),
@@ -54,15 +54,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table demodatabase.users: ~2 rows (approximately)
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`) VALUES
-	(13, 'haihoan15', 'haihoang15122002@gmail.com', '$2y$10$LWolZ5vHd6IHMYq0ihUwk.sJKM4LyB49mk/sJMLpQM8cxZoG4arxG', '1742189072_12.jpg'),
-	(18, 'haihoan12', 'haihoantamquoc@gmail.com', '$2y$10$vYNKrJQhVAkq0FADq83CcujPJxGQS2C7cmODhD3rWxW1w.1IpsrUW', '1742127381_11.jpg');
+-- Dumping data for table demodatabase.users: ~3 rows (approximately)
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`, `role`) VALUES
+	(13, 'haihoan15', 'haihoang15122002@gmail.com', '$2y$10$LWolZ5vHd6IHMYq0ihUwk.sJKM4LyB49mk/sJMLpQM8cxZoG4arxG', '1742189072_12.jpg', 'user'),
+	(18, 'haihoan12', 'haihoantamquoc@gmail.com', '$2y$10$vYNKrJQhVAkq0FADq83CcujPJxGQS2C7cmODhD3rWxW1w.1IpsrUW', '1742127381_11.jpg', 'user'),
+	(19, 'admin', 'admin@gmail.com', '$2y$10$VcbSwC8UjMDVud7iIh0N0OE2whsTlMZbCF15yMlfNivibDzeOE4p6', NULL, 'admin');
 
 -- Dumping structure for table demodatabase.wishlist
 DROP TABLE IF EXISTS `wishlist`;
@@ -77,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table demodatabase.wishlist: ~0 rows (approximately)
 

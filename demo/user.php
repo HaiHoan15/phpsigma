@@ -1,3 +1,4 @@
+<!-- thông tin người dùng -->
 <?php
 session_start();
 include 'header.php';

@@ -1,5 +1,44 @@
-<!-- đăng nhập -->
-<?php session_start(); ?> 
+<?php 
+session_start();
+include 'config/database.php'; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    
+    $stmt = $conn->prepare("SELECT id, username, email, password, role FROM users WHERE username = ? OR email = ?");
+    $stmt->bind_param("ss", $login, $login);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $username, $email, $hashed_password, $role);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+
+            $_SESSION['user_id'] = $id;
+            $_SESSION['username'] = $username;
+            $_SESSION['role'] = $role;
+
+            if ($role === 'admin') {
+                $_SESSION['success'] = "Đăng nhập thành công với vai trò ADMIN!";
+                header("Location: admin.php");
+            } else {
+                $_SESSION['success'] = "Đăng nhập thành công!";
+                header("Location: index.php");
+            }
+            exit();
+        } else {
+            $_SESSION['error'] = "Sai mật khẩu!";
+        }
+    } else {
+        $_SESSION['error'] = "Tài khoản không tồn tại!";
+    }
+    $stmt->close();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -33,7 +72,7 @@
 <div class="container">
     <div class="login-container">
         <h3 class="text-center">ĐĂNG NHẬP</h3>
-        <form method="POST" action="login_test.php">
+        <form method="POST" action="">
             <div class="mb-3">
                 <label class="form-label">Tên người dùng hoặc email <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="login" required>
@@ -45,7 +84,7 @@
             <button type="submit" class="btn btn-custom w-100">Đăng nhập</button>
         </form>
         <div class="text-end mt-2">
-            <a href="register.php">Chưa có tải khoản? Ấn vào đây để đăng ký!</a>
+            <a href="register.php">Chưa có tài khoản? Ấn vào đây để đăng ký!</a>
         </div>
     </div>
 </div>
