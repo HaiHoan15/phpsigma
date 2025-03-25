@@ -1,0 +1,38 @@
+📦demo
+ ┣ 📂assets
+ ┃ ┣ 📂css
+ ┃ ┃ ┗ 📜style.css
+ ┃ ┣ 📂images
+ ┃ ┃ ┣ 📂image_page
+ ┃ ┃ ┗ 📂image_user
+ ┃ ┗ 📂js
+ ┃ ┃ ┗ 📜script.js
+ ┣ 📂config
+ ┃ ┗ 📜database.php
+ ┗ 📂pages
+ ┃ ┣ 📂admin
+ ┃ ┃ ┣ 📜add_product.php            
+ ┃ ┃ ┣ 📜admin.php                  
+ ┃ ┃ ┗ 📜edit_product.php           
+ ┃ ┣ 📂confirm
+ ┃ ┃ ┣ 📜login.php                 
+ ┃ ┃ ┣ 📜login_test.php            
+ ┃ ┃ ┣ 📜logout.php                
+ ┃ ┃ ┣ 📜register.php               
+ ┃ ┃ ┗ 📜register_test.php          
+ ┃ ┣ 📂head_foot
+ ┃ ┃ ┣ 📜footer.php               
+ ┃ ┃ ┗ 📜header.php                
+ ┃ ┣ 📂product
+ ┃ ┃ ┣ 📜buy_button.php            
+ ┃ ┃ ┗ 📜product_information.php    
+ ┃ ┣ 📂user
+ ┃ ┃ ┣ 📜update_user.php          
+ ┃ ┃ ┗ 📜user.php                 
+ ┃ ┣ 📂wishlist
+ ┃ ┃ ┣ 📜remove_from_wishlist.php   
+ ┃ ┃ ┣ 📜update_wishlist.php        
+ ┃ ┃ ┗ 📜wishlist.php               
+ ┗📜index.php                
+
+
