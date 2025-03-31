@@ -1,0 +1,104 @@
+/* Định dạng cơ bản cho giao diện */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container chính */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    width: 420px;
+}
+
+/* Căn giữa tiêu đề */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form layout với bố cục gọn gàng */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Tạo khoảng cách giữa các input */
+}
+
+/* Nhãn (Label) và ô nhập */
+label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left; /* Căn trái cho label */
+}
+
+/* Input và Select có cùng định dạng */
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+/* Hiệu ứng hover cho input */
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Phần hiển thị tổng giá và thông tin */
+p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Nút thanh toán */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+/* Hiệu ứng hover cho nút */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Phần QR Code */
+#qrCodeContainer {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Hình ảnh QR Code */
+#qrCodeContainer img {
+    margin-top: 10px;
+    max-width: 200px;
+}

@@ -1,38 +1,64 @@
 📦demo
  ┣ 📂assets
  ┃ ┣ 📂css
+ ┃ ┃ ┣ 📜pay.css
+ ┃ ┃ ┣ 📜pay_list.css
  ┃ ┃ ┗ 📜style.css
  ┃ ┣ 📂images
  ┃ ┃ ┣ 📂image_page
+ ┃ ┃ ┃ ┣ 📜bed1.jpg
+ ┃ ┃ ┃ ┣ 📜bed2.webp
+ ┃ ┃ ┃ ┣ 📜bed3.jpg
+ ┃ ┃ ┃ ┣ 📜bed4.jpg
+ ┃ ┃ ┃ ┣ 📜bed5.jpg
+ ┃ ┃ ┃ ┣ 📜bed6.jpg
+ ┃ ┃ ┃ ┣ 📜bed7.jpg
+ ┃ ┃ ┃ ┣ 📜bed8.jpg
+ ┃ ┃ ┃ ┣ 📜qr_code.jpg
+ ┃ ┃ ┃ ┣ 📜sleeping.jpg
+ ┃ ┃ ┃ ┣ 📜sleepingbean.gif
+ ┃ ┃ ┃ ┣ 📜sleepingkhan.gif
+ ┃ ┃ ┃ ┣ 📜sleepingmeme.gif
+ ┃ ┃ ┃ ┣ 📜sleepingoldman.gif
+ ┃ ┃ ┃ ┗ 📜sleepingronaldo.gif
  ┃ ┃ ┗ 📂image_user
+ ┃ ┃ ┃ ┣ 📜1742127381_11.jpg
+ ┃ ┃ ┃ ┣ 📜1742888925_AI_1.gif
+ ┃ ┃ ┃ ┗ 📜1742890662_AI_1.gif
  ┃ ┗ 📂js
+ ┃ ┃ ┣ 📜pay.js
  ┃ ┃ ┗ 📜script.js
  ┣ 📂config
  ┃ ┗ 📜database.php
- ┗ 📂pages
+ ┣ 📂pages
  ┃ ┣ 📂admin
- ┃ ┃ ┣ 📜add_product.php            
- ┃ ┃ ┣ 📜admin.php                  
- ┃ ┃ ┗ 📜edit_product.php           
+ ┃ ┃ ┣ 📜add_product.php
+ ┃ ┃ ┣ 📜admin.php
+ ┃ ┃ ┣ 📜admin_2.php
+ ┃ ┃ ┗ 📜edit_product.php
  ┃ ┣ 📂confirm
- ┃ ┃ ┣ 📜login.php                 
- ┃ ┃ ┣ 📜login_test.php            
- ┃ ┃ ┣ 📜logout.php                
- ┃ ┃ ┣ 📜register.php               
- ┃ ┃ ┗ 📜register_test.php          
+ ┃ ┃ ┣ 📜login.php
+ ┃ ┃ ┣ 📜login_test.php
+ ┃ ┃ ┣ 📜logout.php
+ ┃ ┃ ┣ 📜register.php
+ ┃ ┃ ┗ 📜register_test.php
  ┃ ┣ 📂head_foot
- ┃ ┃ ┣ 📜footer.php               
- ┃ ┃ ┗ 📜header.php                
+ ┃ ┃ ┣ 📜footer.php
+ ┃ ┃ ┗ 📜header.php
+ ┃ ┣ 📂pay
+ ┃ ┃ ┣ 📜pay.php
+ ┃ ┃ ┗ 📜pay_list.php
  ┃ ┣ 📂product
- ┃ ┃ ┣ 📜buy_button.php            
- ┃ ┃ ┗ 📜product_information.php    
+ ┃ ┃ ┣ 📜buy_button.php
+ ┃ ┃ ┗ 📜product_information.php
  ┃ ┣ 📂user
- ┃ ┃ ┣ 📜update_user.php          
- ┃ ┃ ┗ 📜user.php                 
- ┃ ┣ 📂wishlist
- ┃ ┃ ┣ 📜remove_from_wishlist.php   
- ┃ ┃ ┣ 📜update_wishlist.php        
- ┃ ┃ ┗ 📜wishlist.php               
- ┗📜index.php                
-
-
+ ┃ ┃ ┣ 📜update_order_status.php
+ ┃ ┃ ┣ 📜update_user.php
+ ┃ ┃ ┣ 📜user.php
+ ┃ ┃ ┗ 📜user_orders.php
+ ┃ ┗ 📂wishlist
+ ┃ ┃ ┣ 📜remove_from_wishlist.php
+ ┃ ┃ ┣ 📜update_wishlist.php
+ ┃ ┃ ┗ 📜wishlist.php
+ ┣ 📜index.php
+ ┗ 📜map

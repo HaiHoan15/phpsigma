@@ -23,6 +23,7 @@
                 <a class="nav-link" href="/demo/index.php">Trang Chủ</a>
                 <a class="nav-link" href="/demo/pages/user/user.php">User</a>
                 <a class="nav-link" href="/demo/pages/wishlist/wishlist.php">Giỏ hàng</a>
+                <a class="nav-link" href="/demo/pages/pay/pay_list.php">Thanh toán</a>
                 <a class="nav-link" href="/demo/pages/confirm/logout.php">Đăng Xuất</a>
                 </ul>
             </div>

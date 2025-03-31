@@ -36,15 +36,19 @@ $result = $conn->query("SELECT * FROM products");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/script.js"></script>
     <link rel="stylesheet" href="/demo/assets/css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
 
 <div class="container mt-4">
-    <h2 class="text-center">Quản lý Sản Phẩm</h2>
+    <h2 class="text-center">
+        Quản lý Sản Phẩm 
+        <a href="admin_2.php" class="ms-2">
+            <i class="bi bi-arrow-right-circle-fill" style="font-size: 24px; color: #007bff;"></i>
+        </a>
+    </h2>
     <a href="/demo/pages/confirm/logout.php" class="btn btn-danger mb-3">Đăng xuất</a>
-    <!-- <a href="../confirm/logout.php" class="btn btn-danger mb-3">Đăng xuất</a> -->
     <a href="/demo/pages/admin/add_product.php" class="btn btn-primary mb-3">Thêm sản phẩm</a>
-    <!-- <a href="add_product.php" class="btn btn-primary mb-3">Thêm sản phẩm</a> -->
 
     <?php if (isset($_SESSION['success']) || isset($_SESSION['error'])): ?>
         <div class="alert alert-<?php echo isset($_SESSION['success']) ? 'success' : 'danger'; ?>">
@@ -91,7 +95,6 @@ $result = $conn->query("SELECT * FROM products");
                 </td>
             </tr>
         <?php } ?>
-
         </tbody>
     </table>
 </div>
